@@ -1,32 +1,27 @@
 from random import randint
 from time import sleep
+random = randint(1, 100)
 
+def getname():
+  username = input('Enter your name >')
+  print(f'Hi! {username}')
+  return username
 
-# Get username
-username = input("Enter your name >")
+def getnumber():
+  usernumber = int(input("What's your guess? >"))
+  print(f'Your guess is {usernumber}')
+  return usernumber
 
-# Greeting
-print("Hi!" , username)
-
-# random number
-random = randint(1,100)
-
-# Get user's number
-usernumber = int(input("What's your guess? >"))
-
-# Print user's number
-print("Your guess is ", usernumber)
-
-# Compare answer with user's guess
-if usernumber == random:
+def answer(random, usernumber):
+  if usernumber == random:
     print("*******************")
-    sleep(1)
-    print("*******************")
-    sleep(1)
-    print("*******************")
-    sleep(1)
     print(f'You got it right!! The answer is {random}!!')
-elif usernumber > random:
-    print(f'Keep going, man~! That was too high, {username}..')
-elif usernumber < random:
-    print(f'Keep going, man~! That was too low, {username}..')
+    print('*******************')
+  elif usernumber > random:
+    print(f'Keep going, man~! That was too high..')
+  elif usernumber < random:
+    print(f'Keep going, man~! That was too low..')
+
+username = getname()
+usernumber = getnumber()
+answer(random, usernumber)
