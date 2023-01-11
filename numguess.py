@@ -13,14 +13,18 @@ def getnumber():
   return usernumber
 
 def answer(random, usernumber):
-  if usernumber == random:
-    print("*******************")
-    print(f'You got it right!! The answer is {random}!!')
-    print('*******************')
-  elif usernumber > random:
-    print(f'Keep going, man~! That was too high..')
-  elif usernumber < random:
-    print(f'Keep going, man~! That was too low..')
+  while True:
+    if usernumber == random:
+        print("*******************")
+        print(f'You got it right!! The answer is {random}!!')
+        print('*******************')
+        break
+    elif usernumber > random:
+        print(f'Keep going, man~! That was too high..')
+        usernumber = int(input('Try again~ >'))
+    elif usernumber < random:
+        print(f'Keep going, man~! That was too low..')
+        usernumber = int(input('Try again~ >'))
 
 username = getname()
 usernumber = getnumber()
