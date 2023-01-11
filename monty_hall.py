@@ -1,12 +1,14 @@
 from random import choice
 
+
 doors = ['door1', 'door2', 'door3']
 
+iter_num = int(input('Enter some num(100-10000): '))
 
 stay = 0
 change = 0
 
-for i in range(10000):
+for _ in range(iter_num):
     winning_door = choice(doors)
     select_door = choice(doors)
         
@@ -15,8 +17,8 @@ for i in range(10000):
     else:
         change += 1
 
-stay_rate = round((stay/10000) * 100,2)
-change_rate = round((change/10000) * 100,2)
+stay_rate = round((stay/iter_num) * 100,2)
+change_rate = round((change/iter_num) * 100,2)
 
-print(f'10000 times of simulation: {change} times win({change_rate}% change) {stay} times win({stay_rate}% stay)')
+print(f'{iter_num} times of simulation: {change} times win({change_rate}% change) {stay} times win({stay_rate}% stay)')
     
